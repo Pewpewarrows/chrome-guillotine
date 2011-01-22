@@ -1,0 +1,12 @@
+{
+    "name": "Guillotine",
+    "version": "0.1",
+    "description": "Because diff'ing text should be easier than learning how to spell the word guillotine!",
+    "browser_action": {
+        "default_icon": "static/images/icon.png",
+        "default_title": "Chrome Guillotine"
+    },
+    "permissions": [
+        "tabs"
+    ]
+}
