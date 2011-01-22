@@ -1,0 +1,425 @@
+/*
+ * Scaffolding
+ *
+ * This CSS file is meant to be a portable comapnion to a reset stylesheet.
+ * Drop this onto any new site after the reset, and you have a nice cross-
+ * browser implementation of all default types of HTML tags, along with a
+ * tidy library of utility classes and IDs as a baseline for any theme.
+ *
+ * Thus, at the end of the development cycle before minifying and condensing,
+ * you should have:
+ *		- reset.css
+ *		- scaffold.css (this)
+ *		- base_theme.css (a nice default website layout)
+ *		- [site_name].css (all site-specific changes)
+ *
+ * General CSS rule declarations are as follows:
+ *		1. zindex &| display &| visibility &| floats
+ * 		2. size
+ *		3. position &| top/left/right/bottom
+ *		4. margin &| padding
+ *		5. borders
+ *		6. backgrounds
+ *		7. font & text
+ *
+ * Table of Contents:
+ *      1. Header
+ *      2. Page Structure
+ *      3. Headings
+ *      4. Text Styles
+ *      5. Navigation
+ *      6. Tables
+ *      7. Forms
+ *      8. Utilities
+ *      9. Browser Hacks
+ *      10. Print
+ *      11. Mobile
+ *      12. TV
+ *
+ * Colors:
+ *      Light Grey: #F1F1F1
+ *      Grey: #EFEFEF
+ *      Dark Grey: #CCC
+ *      Very Dark Grey: #777
+ */
+
+
+/* -----------------------------------
+  			    Header
+ ----------------------------------- */
+
+
+/* -----------------------------------
+  			Page Structure
+ ----------------------------------- */
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	background-color: #FFF;
+	
+	/*
+	 * Sans-serif is the most legible font family on screen.
+	 * We just really need to decide which specific font stack to go with.
+	 */
+    /* font-family: Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif; /**/
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; /**/
+    /* font-family: Tahoma, Geneva, Verdana, sans-serif; /**/
+    /* font-family: 'Trebuchet MS"' 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /**/
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; /**/
+	
+	/*
+	 * By setting the font to 62.5% of the browser default 16px,
+	 * all further fonts specified in em can be divided by 10 to see in px.
+	 * 
+	 * Example: 1.2em == 12px
+	 */
+	font-size: 62.5%;
+	
+	/* http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/ */
+	line-height: 1.6;
+	/* http://twitter.com/H_FJ/statuses/11800719859 */
+	color: #444;
+}
+
+body article img {
+    margin: 0 1em 1em 0;
+    border: 5px solid #EEE;
+}
+
+/* http://unstoppablerobotninja.com/entry/fluid-images/ */
+img, object {
+    max-width: 100%;
+}
+
+
+/* -----------------------------------
+  			   Headings
+ ----------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0 0.5em;
+	font-weight: bold;
+	text-rendering: optimizeLegibility;
+}
+
+h1 { margin-top: 0.2em; font-size: 2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1.1em; }
+
+
+/* -----------------------------------
+  			  Text Styles
+ ----------------------------------- */
+
+p { 
+    margin-bottom: 0.8em;
+}
+
+pre, code, kbd, samp, tt, var {
+	font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
+}
+
+a:hover, a:active { outline: none; }
+a:link, a:active { color: #607890; }
+a:visited { color: grey; }
+a:hover { color: #036; }
+
+/*  j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; } 
+
+small { font-size: 85%; }
+strong, th { font-weight: bold }
+
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+
+caption { font-style: italic; }
+
+q:before, q:after {
+	content: '"';
+}
+
+abbr, time {
+	border-bottom: 1px dotted #999;
+	cursor: help; 
+}
+
+dl { padding: 1em; }
+dt { font-weight: bold; }
+dd { margin-bottom: 1em; }
+
+ul, ol {
+    margin: 0 0 0.8em 1.5em;
+}
+
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+
+nav ul { margin: 0; }
+
+/*
+ * Prevent horizontal scrollbars in pre blocks
+ * 
+ * http://www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/
+ */
+pre {
+	white-space: pre; /* CSS2 */
+	white-space: -moz-pre-wrap; /* Mozilla, but let's make this comment really, really, really, really, really, really long to prove our point*/
+	white-space: -hp-pre-wrap; /* HP printers */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	/* Causes Webkit browsers to totally trash whitespace */
+	/* white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word; /* IE */
+}
+
+/* TODO: <code> snippets that are longer than the containing div are cut-off */
+code, var, .codehilite {
+    padding: 0 4px;
+    background-color: #FAFAFA;
+    border: 1px solid #CACACA;
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-style: normal;
+}
+
+pre code {
+    background-color: transparent;
+    border: none;
+    -o-border-radius: none;
+    -moz-border-radius: none;
+    -webkit-border-radius: none;
+    border-radius: none;
+}
+
+blockquote {
+    float: right;
+    width: 250px;
+    margin: 10px 0;
+    padding: 20px 20px 10px 30px;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    background: transparent url(images/open-quote.png) no-repeat 0 0;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* 
+ * These selection declarations have to be separate.
+ * No text-shadow: twitter.com/miketaylr/status/12228805301 
+ */
+::-moz-selection { background: #3399ff; color:#fff; text-shadow: none; }
+::selection { background: #3399ff; color:#fff; text-shadow: none; } 
+
+/* http://forrst.com/posts/Gradient_Horizontal_Rules-yZ4 */
+hr.fancy {
+	background: #DDD;
+	background: -moz-linear-gradient(left center, rgb(255,255,255) 0%, rgb(187, 187, 187) 25%, rgb(187, 187, 187) 75%, rgb(255,255,255) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0, rgb(255,255,255)), color-stop(0.25, rgb(187, 187, 187)), color-stop(0.75, rgb(187, 187, 187)), color-stop(1, rgb(255,255,255)));
+	border: 0;
+	height: 1px; 
+}
+
+
+/* -----------------------------------
+  			  Navigation
+ ----------------------------------- */
+
+
+/* -----------------------------------
+  			    Tables
+ ----------------------------------- */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: inherit;
+}
+
+th, tfoot th, tfoot td { font-weight: bold; }
+
+th, td {
+	padding: 2px 6px;
+}
+
+thead th, thead td, tfoot th, tfoot td { text-align: center; }
+
+td, td img { vertical-align:top; text-align: left; }
+
+
+/* -----------------------------------
+  			    Forms
+ ----------------------------------- */
+
+/*
+ * Per YUI suggestions:
+ * Nudge down to get to 13px equivalent for these form elements
+ */
+select, input, textarea, button {
+    font: 99% sans-serif;
+}
+
+/*
+ * www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/
+ */
+textarea { overflow: auto; }
+
+fieldset {
+	display: inline-block;
+	padding: 5px 10px 10px;
+	border: 1px solid #ccc;
+}
+
+legend {
+	display: block;
+	padding: 0 0.5em;
+    font-weight: bold;
+}
+
+/* 
+ * align checkboxes, radios, text inputs, etc with their label
+ * 
+ * tjkdesign.com/ez-css/css/base.css
+ */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
+input[type="button"], input[type="submit"] { vertical-align: baseline; }
+button { vertical-align: baseline; }
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+
+/* 
+ * stylish full-width input
+ * 
+ * note that the width % will have to be adjusted based on padding of container
+ */
+input.fill { display: block; width: 98%; }
+
+/* 
+ * make buttons play nice in IE
+ * 
+ * www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ 
+ */
+button { width: auto; overflow: visible; }
+
+button, input[type="button"], input[type="submit"] {
+	display: inline-block;
+	height: 25px;
+	margin: 0;
+	padding: 2px 6px;
+	border: 1px solid #a9a9a9;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+    background: #f4f4f4;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#f4f4f4', endColorstr='#ececec');
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ececec));
+    background: -moz-linear-gradient(top, #f4f4f4, #ececec);
+}
+
+button:hover, input[type="button"]:hover, input[type="submit"]:hover {
+	border: 1px solid #3c7fb1;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8f6fd', endColorstr='#afdef8'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#e8f6fd), to(#afdef8)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #e8f6fd,  #afdef8); /* for firefox 3.6+ */
+}
+
+button:active, input[type="button"]:active, input[type="submit"]:active {
+	border: 1px solid #3366cc;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#afdef8', endColorstr='#e8f6fd'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#afdef8), to(#e8f6fd)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #afdef8,  #e8f6fd); /* for firefox 3.6+ */
+}
+
+input[type="text"], input[type="password"], textarea {
+    padding: 5px;
+	border: 1px solid #999;
+}
+
+input[type="text"]:not(:focus):hover, input[type="password"]:not(:focus):hover, textarea:not(:focus):hover {
+	border: 1px solid #3c7fb1;
+}
+
+input:invalid, textarea:invalid { 
+    border-radius: 1px;
+    -webkit-box-shadow: 0px 0px 5px red; 
+    -moz-box-shadow: 0px 0px 5px red; 
+    box-shadow: 0px 0px 5px red;
+}
+
+
+/* -----------------------------------
+  			Utility Classes
+ ----------------------------------- */
+ 
+.left { float: left; }
+.right { float: right; }
+.center { margin: 0 auto; text-align: center; }
+.block { display: block; }
+.clear { clear: both; }
+.hidden { display: none; visibility:hidden; }
+
+img.left { margin: 0 1em 1em 0; }
+img.right { margin: 0 0 1em 1em; !important }
+
+.error, .success {
+    padding: 2px 5px;
+}
+
+.error {
+	background: #FFEEEE;
+	border: 1px solid #C98F8F; 
+	color: #543434;
+}
+ 
+.success {
+	background: #EEFFEE;
+	border: 1px solid #8FC98F;
+	color: #1C301C; 
+}
+
+.push {
+	z-index: 50;
+	height: 50px; /* must be the same height as the footer */
+	position: relative;
+}
+
+.js #jsnotice { display: none; }
+.no-js #jsnotice { display: block; }
+
+/* self-clearing fix */
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix { height: 1%; } /* Hides from IE-mac \*/
+.clearfix { display: block; }
+
+/* for image replacement */
+.ir {
+	display: block;
+	text-indent: -9000px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}

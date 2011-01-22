@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- ✰ -->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" /> <!-- Needs to be within the first 512 bytes -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>Page Title</title>
+
+    <!-- Third-Party -->
+
+    <!-- Site-Specific -->
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/scaffold.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/base_theme.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/guillotine.css" />
+</head>
+<!-- http://www.viget.com/inspire/extending-paul-irishs-comprehensive-dom-ready-execution/ -->
+<body data-controller="guillotine" data-action="background">
+    <div id="wrapper">
+        <header>
+        </header>
+        <section id="main">
+        </section> <!-- end of #main -->
+        <footer>
+        </footer>
+    </div> <!-- end of #wrapper -->
+
+    <!-- Javascript is only allowed past this point -->
+
+    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+    <script src="static/js/lib/jquery-1.4.4.js"></script>
+
+    <!-- Third-Party -->
+    <script src="static/js/lib/json2.js"></script>
+    <script src="static/js/lib/underscore.js"></script>
+    <script src="static/js/lib/underscore.strings.js"></script>
+
+    <!-- Site-Specific -->
+    <script src="static/js/utils.js"></script>
+    <script src="static/js/guillotine.js"></script>
+
+    <!-- Google Analytics Async Tracker -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-3877760-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = 'https://ssl.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>
