@@ -35,7 +35,7 @@ body {
 
 header {
 	position: relative;
-	height: 130px;
+	height: 100px;
 }
 
 header a.logo img {
@@ -58,14 +58,6 @@ footer a {
   			   Headings
  ----------------------------------- */
  
-h1 a { text-decoration: none; border: 0; }
-h1 a:visited { color: inherit; }
-h1 a:hover { color: #036; }
-
-aside.widget h2 {
-    margin: 0 0 0.2em;
-    font-size: 1.3em;
-}
 
 
 /* -----------------------------------
@@ -144,6 +136,44 @@ nav li a img {
 /* -----------------------------------
   			    Tables
  ----------------------------------- */
+
+table, td, th {
+    border: 1px solid #607890;
+}
+
+thead th {
+    background-color: #607890;
+    color: white;
+    font-size: 1.5em;
+}
+
+th, td {
+    padding: 10px 15px;
+}
+
+tbody th, tbody td {
+    text-align: left;
+}
+
+#snippets {
+    margin-bottom: 20px;
+}
+
+#snippets table {
+    display: none;
+}
+
+#snippets table a {
+    color: red;
+    font-size: 1.4em;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+#result {
+    border: 1px solid #607890;
+    margin-top: 20px;
+}
 
 /* -----------------------------------
   			    Forms

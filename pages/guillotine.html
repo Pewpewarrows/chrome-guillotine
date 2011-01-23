@@ -6,10 +6,9 @@
     <meta charset="utf-8" /> <!-- Needs to be within the first 512 bytes -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <link rel="stylesheet" type="text/css" src="../static/css/reset.css" />
-    <link rel="stylesheet" type="text/css" src="../static/css/scaffold.css" />
-    <link rel="stylesheet" type="text/css" src="../static/css/base_theme.css" />
-    <link rel="stylesheet" type="text/css" src="../static/css/guillotine.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/scaffold.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/guillotine.css" />
 
     <title>Guillotine Diff Tool</title>
 </head>
@@ -17,8 +16,31 @@
 <body data-controller="guillotine" data-action="main">
     <div id="wrapper">
         <header>
+            <div class="mini-wrap">
+                <h1>Guillotine</h1>
+                <span>... because diff'ing text should be easier than learning how to spell guillotine!</span>
+            </div>
         </header>
         <section id="main">
+            <div class="mini-wrap">
+                <section id="snippets">
+                    <span id="no-snips">You currently don't have any snippets. Right click selected text on a page and click on "Add to Guillotine" to get started!</span>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>URL</th>
+                                <th>Snippet</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </section>
+                <input id="diff" type="button" value="Compare" />
+                <section id="result"></section>
+            </div>
         </section>
         <footer>
         </footer>
