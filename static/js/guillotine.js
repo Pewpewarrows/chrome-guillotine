@@ -19,7 +19,7 @@
             $snippets.html('');
             for (var i = 0; i < snippets.length; i++) {
                 var snip = snippets[i];
-                $snippets.append('<tr id="' + i + '"><td><input class="snip" type="checkbox" /></td><td>' + snip.url  + '</td><td class="snip-text">' + snip.text  + '</td><td><a class="remove-snip" href="javascript:;">X</a></td></tr>');
+                $snippets.append('<tr id="' + i + '"><td><input class="snip" type="checkbox" /></td><td><a href="' + snip.url  + '">' + snip.url + '</a></td><td class="snip-text">' + escape(snip.text)  + '</td><td><a class="remove-snip" href="javascript:;">X</a></td></tr>');
             }
 
             if (snippets.length === 0) {
@@ -52,7 +52,7 @@
                     onclick: function(info, tab) {
                         Guillotine.add_snippet({
                             url: info.pageUrl,
-                            text: info.selectionText
+                            text: Encoder.htmlEncode(info.selectionText)
                         });
                     }
                 });
@@ -104,12 +104,20 @@
                         $('#' + Guillotine.first_snip + ' input.snip').attr('checked', '');
                     }
 
-                    if (Guillotine.second_snip === undefined) {
-                        Guillotine.second_snip = id;
-                    }
+                    if ($(this).attr('checked') === true) {
+                        if (Guillotine.second_snip === undefined) {
+                            Guillotine.second_snip = id;
+                        }
 
-                    Guillotine.first_snip = Guillotine.second_snip;
-                    Guillotine.second_snip = id;
+                        Guillotine.first_snip = Guillotine.second_snip;
+                        Guillotine.second_snip = id;
+                    } else {
+                        if (snips.length === 0) {
+                            Guillotine.first_snip = Guillotine.second_snip = undefined;
+                        } else {
+                            Guillotine.first_snip = Guillotine.second_snip = $(snips[0]).closest('tr').attr('id');
+                        }
+                    }
                 });
 
                 $('a.remove-snip').live('click', function() {
@@ -134,8 +142,8 @@
                         return false;
                     }
 
-                    var first_snip = $(snips[0]).closest('tr').find('td.snip-text').html();
-                    var second_snip = $(snips[1]).closest('tr').find('td.snip-text').html();
+                    var first_snip = Encoder.htmlDecode(escape($(snips[0]).closest('tr').find('td.snip-text').html()));
+                    var second_snip = Encoder.htmlDecode(escape($(snips[1]).closest('tr').find('td.snip-text').html()));
 
                     var diff = diffString(first_snip, second_snip);
                     $('#result').html(diff);

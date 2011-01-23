@@ -163,7 +163,7 @@ tbody th, tbody td {
     display: none;
 }
 
-#snippets table a {
+#snippets table a.remove-snip {
     color: red;
     font-size: 1.4em;
     font-weight: bold;
