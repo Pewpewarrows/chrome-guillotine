@@ -9,7 +9,23 @@
         "default_icon": "static/images/icon.png",
         "default_title": "Chrome Guillotine"
     },
+    "background_page": "pages/background.html",
+    "content_scripts": {
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+        ],
+        "js": [
+            "static/js/lib/jquery-1.4.4.js",
+            "static/js/content_script.js"
+        ],
+        "run-at": "document_start",
+        "all_frames": true
+    },
     "permissions": [
-        "tabs"
+        "tabs",
+        "contextMenus",
+        "http://*/*",
+        "https://*/*"
     ]
 }
