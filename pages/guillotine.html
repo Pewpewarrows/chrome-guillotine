@@ -6,40 +6,36 @@
     <meta charset="utf-8" /> <!-- Needs to be within the first 512 bytes -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" src="../static/css/reset.css" />
+    <link rel="stylesheet" type="text/css" src="../static/css/scaffold.css" />
+    <link rel="stylesheet" type="text/css" src="../static/css/base_theme.css" />
+    <link rel="stylesheet" type="text/css" src="../static/css/guillotine.css" />
 
-    <!-- Third-Party -->
-
-    <!-- Site-Specific -->
-    <link rel="stylesheet" type="text/css" media="all" href="static/css/reset.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="static/css/scaffold.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="static/css/base_theme.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="static/css/guillotine.css" />
+    <title>Guillotine Diff Tool</title>
 </head>
 <!-- http://www.viget.com/inspire/extending-paul-irishs-comprehensive-dom-ready-execution/ -->
-<body data-controller="guillotine" data-action="background">
+<body data-controller="guillotine" data-action="main">
     <div id="wrapper">
         <header>
         </header>
         <section id="main">
-        </section> <!-- end of #main -->
+        </section>
         <footer>
         </footer>
-    </div> <!-- end of #wrapper -->
-
+    </div>
     <!-- Javascript is only allowed past this point -->
 
     <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-    <script src="static/js/lib/jquery-1.4.4.js"></script>
+    <script src="../static/js/lib/jquery-1.4.4.js"></script>
 
     <!-- Third-Party -->
-    <script src="static/js/lib/json2.js"></script>
-    <script src="static/js/lib/underscore.js"></script>
-    <script src="static/js/lib/underscore.strings.js"></script>
+    <script src="../static/js/lib/json2.js"></script>
+    <script src="../static/js/lib/underscore.js"></script>
+    <script src="../static/js/lib/underscore.strings.js"></script>
 
     <!-- Site-Specific -->
-    <script src="static/js/utils.js"></script>
-    <script src="static/js/guillotine.js"></script>
+    <script src="../static/js/utils.js"></script>
+    <script src="../static/js/guillotine.js"></script>
 
     <!-- Google Analytics Async Tracker -->
     <script type="text/javascript">

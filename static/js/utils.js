@@ -146,21 +146,6 @@ var Site = Class.extend({
     }
 });
 
-/*
-var g_condition;
-var g_callback;
-
-function when(condition, callback) {
-	if (!condition()) {
-		g_condition = condition;
-		g_callback = callback;
-		setTimeout('when(g_condition, g_callback)', 100);
-	} else {
-		callback();
-	}
-}
-*/
-
 window.compare = function(a, b) {
 	return ((a < b) ? -1 : ((a > b) ? 1 : 0));
 };
